@@ -1,0 +1,107 @@
+.aura-sensor-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-lg);
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+    transform-origin: bottom right;
+    animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.webcam-container {
+    width: 80px;
+    height: 60px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+.webcam-feed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.scan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(99, 102, 241, 0.8);
+    box-shadow: 0 0 10px var(--primary);
+    animation: scan 2s linear infinite;
+}
+
+.sensor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.status-row,
+.emotion-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.emotion-row {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.blink-icon {
+    color: #ef4444;
+    animation: blink 1s infinite;
+}
+
+@keyframes scan {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

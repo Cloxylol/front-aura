@@ -24,12 +24,32 @@
     }
 }
 
-/* Feed Slider Layout */
-.feed-wrapper {
+/* Feed Layout */
+.feed-column {
+    display: flex;
+    /* Flex container to stack CreatePost and Feed */
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+}
+
+.static-create-post {
+    flex-shrink: 0;
+    /* Do not shrink */
+    padding-bottom: var(--spacing-md);
+    z-index: 10;
+    position: relative;
+}
+
+.feed-wrapper {
+    flex: 1;
+    /* Take remaining height */
+    min-height: 0;
+    /* Allow shrinking for scrolling/overflow */
     width: 100%;
-    height: 100%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -41,37 +61,31 @@
     overflow: hidden;
     /* Strict no-scroll */
     position: relative;
+    /* Optional: Add a mask or gradient at bottom if desired */
 }
 
+/* Rest of slider styles... */
 .feed-slider {
     height: 100%;
     width: 100%;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    /* Elegant easing */
 }
 
-/* Individual Slides */
 .slide-item {
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    /* Align to top instead of center */
+    padding-top: var(--spacing-md);
+    /* Add some breathing room */
     justify-content: center;
 }
 
 .slide-content {
     width: 100%;
-    max-height: 100%;
-    /* Optional: maintain aspect ratio or max width inside */
-}
-
-.feed-column {
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: none;
+    /* Removed max-height restriction to allow content to flow naturally, 
+     but since it's a slide, we assume it fits or is reasonably sized. */
 }
 
 /* Ensure each item takes full height or centers properly */

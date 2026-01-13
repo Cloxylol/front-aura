@@ -8,9 +8,8 @@ import '../styles/Home.css';
 const Home = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    // Combine CreatePost and Posts into a single navigable list
-    // We'll treat the CreatePost component as index 0
-    const totalItems = 1 + MOCK_POSTS.length;
+    // Only posts are navigable now
+    const totalItems = MOCK_POSTS.length;
 
     const handleNavigation = (direction) => {
         if (direction === 'down' && activeIndex < totalItems - 1) {
@@ -32,46 +31,46 @@ const Home = () => {
 
     return (
         <div className="home-layout container">
-            <div className="feed-wrapper">
-                <div className="scroll-controls">
-                    <button
-                        className="scroll-btn"
-                        onClick={() => handleNavigation('up')}
-                        disabled={activeIndex === 0}
-                        style={{ opacity: activeIndex === 0 ? 0.3 : 1 }}
-                    >
-                        <ChevronUp size={24} />
-                    </button>
-                    <button
-                        className="scroll-btn"
-                        onClick={() => handleNavigation('down')}
-                        disabled={activeIndex === totalItems - 1}
-                        style={{ opacity: activeIndex === totalItems - 1 ? 0.3 : 1 }}
-                    >
-                        <ChevronDown size={24} />
-                    </button>
+            <div className="feed-column">
+                {/* Static Create Post Widget */}
+                <div className="static-create-post">
+                    <CreatePost user={CURRENT_USER} />
                 </div>
 
-                <div className="feed-window">
-                    <div
-                        className="feed-slider"
-                        style={{ transform: `translateY(-${activeIndex * 100}%)` }}
-                    >
-                        {/* Index 0: Create Post */}
-                        <div className="slide-item">
-                            <div className="slide-content">
-                                <CreatePost user={CURRENT_USER} />
-                            </div>
-                        </div>
+                {/* Sliding Feed of Posts */}
+                <div className="feed-wrapper">
+                    <div className="scroll-controls">
+                        <button
+                            className="scroll-btn"
+                            onClick={() => handleNavigation('up')}
+                            disabled={activeIndex === 0}
+                            style={{ opacity: activeIndex === 0 ? 0.3 : 1 }}
+                        >
+                            <ChevronUp size={24} />
+                        </button>
+                        <button
+                            className="scroll-btn"
+                            onClick={() => handleNavigation('down')}
+                            disabled={activeIndex === totalItems - 1}
+                            style={{ opacity: activeIndex === totalItems - 1 ? 0.3 : 1 }}
+                        >
+                            <ChevronDown size={24} />
+                        </button>
+                    </div>
 
-                        {/* Index 1+: Posts */}
-                        {MOCK_POSTS.map(post => (
-                            <div key={post.id} className="slide-item">
-                                <div className="slide-content">
-                                    <PostCard post={post} />
+                    <div className="feed-window">
+                        <div
+                            className="feed-slider"
+                            style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+                        >
+                            {MOCK_POSTS.map(post => (
+                                <div key={post.id} className="slide-item">
+                                    <div className="slide-content">
+                                        <PostCard post={post} />
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
