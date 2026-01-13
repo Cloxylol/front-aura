@@ -1,0 +1,94 @@
+.create-post-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border);
+}
+
+.cp-input-area {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.cp-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+}
+
+.cp-input-area input {
+    background: var(--bg-body);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 0.75rem 1rem;
+    width: 100%;
+    color: var(--text-main);
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.cp-input-area input:focus {
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+.cp-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cp-options {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.cp-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    transition: background 0.2s;
+}
+
+.cp-btn:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-main);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-yellow {
+    color: #f59e0b;
+}
+
+.post-submit-btn {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    transition: transform 0.1s;
+}
+
+.post-submit-btn:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+.post-submit-btn:active {
+    transform: scale(0.98);
+}
