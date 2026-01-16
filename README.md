@@ -1,14 +1,14 @@
-# 🌟 Aura - Frontend
+# Aura - Frontend
 
 Bienvenue sur le frontend du projet **Aura**, une application de réseau social innovante qui intègre une dimension émotionnelle unique grâce à l'analyse faciale.
 
-## 📋 Description
+## Description
 
 Aura est bien plus qu'un simple fil d'actualité. C'est une plateforme où vos réactions comptent. L'application utilise votre webcam pour analyser subtilement vos émotions lorsque vous consultez du contenu, vous attribuant un "Aura Score" dynamique basé sur vos interactions authentiques.
 
 Ce dépôt contient le code source de l'interface utilisateur, construit avec des technologies web modernes pour offrir une expérience fluide et réactive.
 
-## ✨ Fonctionnalités Principales
+## Fonctionnalités Principales
 
 -   **Système d'Aura** : Capture et analyse des émotions via webcam pour gamifier l'expérience utilisateur (Aura Score).
 -   **Fil d'Actualité Interactif** : Navigation fluide entre les posts avec défilement vertical.
@@ -18,7 +18,7 @@ Ce dépôt contient le code source de l'interface utilisateur, construit avec de
 -   **Tendances** : Filtrage du contenu par hashtags populaires.
 -   **Design Moderne** : Interface soignée utilisant des icônes Lucide et des composants réactifs.
 
-## 🛠️ Stack Technique
+## Stack Technique
 
 Ce projet est développé avec les technologies suivantes :
 
@@ -29,7 +29,7 @@ Ce projet est développé avec les technologies suivantes :
 -   **Icons** : [Lucide React](https://lucide.dev/)
 -   **Linting** : ESLint
 
-## 🚀 Installation et Démarrage
+## Installation et Démarrage
 
 Suivez ces étapes pour lancer le projet localement :
 
@@ -56,7 +56,7 @@ Suivez ces étapes pour lancer le projet localement :
 5.  **Accéder à l'application**
     Ouvrez votre navigateur sur l'URL indiquée (généralement `http://localhost:5173`).
 
-## 📂 Structure du Projet
+## Structure du Projet
 
 ```
 src/
@@ -68,10 +68,3 @@ src/
 ├── App.jsx       # Composant racine et configuration du routing
 └── main.jsx      # Point d'entrée de l'application
 ```
-
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request pour suggérer des améliorations.
-
----
-*Développé avec ❤️ par l'équipe Aura.*
